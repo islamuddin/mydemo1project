@@ -21,14 +21,13 @@ jobs:
     - uses: actions/checkout@v2
 
     # Runs a single command using the runners shell
-    - name: install node
-    - uses: actions/steup-node@v2-beta
-    - with:
-        node-version: 12  
+    - name: Install Nodejs
+      uses: actions/setup-node@v2-beta
+      with:
+        node-version: 12
     - name: Install Surge
-    - run: npm install -g surge
-    
+      run: npm install -g surge    
     - name: publish site
-    - run: surge ./ mydemo1project.surge.sh #{{secrets.SURGEN_TOKEN}}
+      run: surge ./ mydemo1project.surge.sh #{{secrets.SURGEN_TOKEN}}
     
     
