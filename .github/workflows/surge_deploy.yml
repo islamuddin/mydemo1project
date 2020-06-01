@@ -28,6 +28,5 @@ jobs:
     - name: Install Surge
       run: npm install -g surge    
     - name: publish site
-      run: surge ./ mydemo1project.surge.sh #{{secrets.SURGEN_TOKEN}}
-    
+      run: surge ./ mydemo1project.surge.sh --token ${{secrets.SURGE_TOKEN}}
     
